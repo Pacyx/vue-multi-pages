@@ -1,4 +1,5 @@
 <template>
+
     <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
         <FormItem prop="user">
             <Input type="text" v-model="formInline.user" placeholder="Username">
@@ -19,6 +20,7 @@
     export default {
         data () {
             return {
+                username:'',
                 formInline: {
                     user: '',
                     password: ''
@@ -36,13 +38,17 @@
         },
         methods: {
             handleSubmit(name) {
+                var username=this.username
+                username=this.formInline.user;
+                console.log(username);
                 this.$refs[name].validate((valid) => {
                     if (valid) {
                         this.$Message.success('Success!');
+                        window.location.href='http://localhost:8080/admin.html'
                     } else {
                         this.$Message.error('Fail!');
                     }
-                })
+                });
             }
         }
     }
