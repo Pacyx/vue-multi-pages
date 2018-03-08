@@ -44,7 +44,7 @@
                 this.$refs[name].validate((valid) => {
                     if (valid) {
                         this.$Message.success('Success!');
-                        window.location.href='http://localhost:8080/admin.html'
+                        window.location.href='http://localhost:8081/admin.html'
                     } else {
                         this.$Message.error('Fail!');
                     }
