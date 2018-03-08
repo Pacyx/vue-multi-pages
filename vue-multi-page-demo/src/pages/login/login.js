@@ -4,10 +4,18 @@ import Vue from 'vue'
 import App from './Login'
 import router from './router/router'
 import iView from 'iview';
+import VueCookie from 'vue-cookie'
+import axios from 'axios'
+// import VueAxios from 'vue-axios'
+
 import 'iview/dist/styles/iview.css';
 
-Vue.use(iView);
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
+Vue.use(iView);
+Vue.use(VueCookie);
+// Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 
@@ -15,6 +23,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  axios,
   components: { App },
   render: h => h(App)
 })
